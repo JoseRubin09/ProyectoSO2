@@ -5,14 +5,18 @@
  */
 package Classes;
 
+import Interfaces.Interfaz;
+
 /**
  *
  * @author Jose Rubin
  */
 public class main {
+	
+	public static Interfaz Interfaz = new Interfaz();
 
 	public static void main(String[] args) {
-
+		Interfaz.setVisible(true);
 	}
 	
 }
