@@ -4,14 +4,19 @@
  * and open the template in the editor.
  */
 package Utils;
-
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 /**
  *
  * @author Jose Rubin
  */
 public class ReadFile {
-    
-    
+
     public JSONArray  readJson (String path){
         JSONParser parser = new JSONParser(); 
         

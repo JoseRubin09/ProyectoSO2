@@ -13,41 +13,41 @@ import java.util.Random;
  * @author Jose Rubin
  */
 public class Admin {
-	Node serie1;
-	Node serie2;
+	Node serie11;
+	Node serie22;
 
 	public Node checkFight1(){
 		//No se si esto funcione pq castie esta broma a Node xd
         if(!Constants.cola1P1.isEmpty()){
-            serie1 = (Node) Constants.cola1P1.peek();
-            serie1.setCola(11);
+            serie11 = Constants.cola1P1.peek();
+            serie11.setCola(11);
         }else if (!Constants.cola2P1.isEmpty()){
-            serie1 = (Node) Constants.cola2P1.peek();
-            serie1.setCola(21);
+            serie11 = Constants.cola2P1.peek();
+            serie11.setCola(21);
         }else if (!Constants.cola3P1.isEmpty()){
-            serie1 = (Node) Constants.cola3P1.peek();
-            serie1.setCola(31);
+            serie11 = Constants.cola3P1.peek();
+            serie11.setCola(31);
         }
-        return serie1;
+        return serie11;
     }
 
 	public Node checkFight2(){
         if(!Constants.cola1P2.isEmpty()){
-            serie2 = (Node) Constants.cola1P2.peek();
-            serie2.setCola(12);
+            serie22 = Constants.cola1P2.peek();
+            serie22.setCola(12);
         }else if (!Constants.cola2P2.isEmpty()){
-            serie2 = (Node) Constants.cola2P2.peek();
-            serie2.setCola(22);
+            serie22 = Constants.cola2P2.peek();
+            serie22.setCola(22);
         }else if (!Constants.cola3P2.isEmpty()){
-            serie2 = (Node) Constants.cola3P2.peek();
-            serie2.setCola(32);
+            serie22 = Constants.cola3P2.peek();
+            serie22.setCola(32);
         }
 
-        return serie2;
+        return serie22;
     }
 
 	public void asignarQueue(Node n){
-        if (n.getPlanta() == 1){
+        if (n.getEstudio() == 1){
             if(n.getTiempo() >= 90){
                 Constants.cola1P1.add(n);
             } else if(n.getTiempo() >= 60){
@@ -66,13 +66,13 @@ public class Admin {
         }
     }
 
-	public void createTelef(){
+	public void createSerie(){
+		System.out.println("createSerie");
         asignarQueue(Constants.serie1.settingNode(1));
         asignarQueue(Constants.serie1.settingNode(2));
         Constants.interfaceFunct.resetTextPanes();
     }
 
-    //implementar estoooooo
     public void createTelefRandom(){
         int numRandom;
         Random random = new Random();
@@ -126,12 +126,11 @@ public class Admin {
         int numRandom;
         Random random = new Random();
         numRandom = random.nextInt(100) + 1;
-		//OTRO CAST (NODE) OJO
         if(numRandom <= 40){
-            n = (Node) Constants.colaRefuerzoP1.poll();
+            n = Constants.colaRefuerzoP1.poll();
             asignarQueue(n);
             
-            n2 = (Node) Constants.colaRefuerzoP2.poll();
+            n2 = Constants.colaRefuerzoP2.poll();
             asignarQueue(n2);
         }
         }

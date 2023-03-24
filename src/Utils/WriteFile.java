@@ -25,19 +25,20 @@ public class WriteFile {
     
     public void writeData(String a){
         JSONArray data = txtAction.readJson("DataTelef.json");
+		System.out.println(data);
         Map<String, Object> map2 = (Map<String, Object>) data.get(0);
         JSONObject obj = new JSONObject();
         JSONArray newJson = new JSONArray();
         for (String key2 : map2.keySet())
             switch(key2){
-                case "Telefonos en el Mercado":
+                case "Series en el Mercado":
                     
                     newTelefdata = (JSONArray) map2.get(key2);
                     if (a == "1"){
-                        newTelefdata.add("Xperia 10 IV");
+                        newTelefdata.add("Rick AND Morty");
                         obj.put(key2, newTelefdata);
                     } else {
-                        newTelefdata.add("Xperia 1 IV");
+                        newTelefdata.add("GOT");
                         obj.put(key2, newTelefdata);
                     }                        
                     break;

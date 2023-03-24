@@ -30,7 +30,7 @@ public class Node {
     this.id = id;
     this.tiempo = tiempo;
     this.estudio = estudio;
-    this.countdown = countdown;
+    this.countdown = 0;
     this.char1 = char1;
     this.char2 = char2;
     this.char3 = char3;
@@ -90,7 +90,7 @@ public class Node {
 	/**
 	 * @param estudio the estudio to set
 	 */
-	public void setPlanta(int estudio) {
+	public void setEstudio(int estudio) {
 		this.estudio = estudio;
 	}
 
@@ -126,7 +126,24 @@ public class Node {
 	 * @return the tipo
 	 */
 	public String getTipo() {
-		return tipo;
+		if (this.getEstudio() == 1){
+            if(this.getTiempo() >= 90){
+                return " Alta Calidad ";
+            } else if(this.getTiempo() >= 60){
+                return " Calidad Media";
+            } else if(this.getTiempo() < 60){
+                return " Capitulo Cortico";
+            }
+        }else{
+            if(this.getTiempo() >= 90){
+                return " Alta Calidad ";
+            } else if(this.getTiempo() >= 60){
+                return " Calidad Media";
+            } else if(this.getTiempo() < 60){
+                return " Capitulo Cortico";
+            }
+        }
+		return "null";
 	}
 
 	/**
@@ -218,5 +235,31 @@ public class Node {
 	 */
 	public void setChar6(String char6) {
 		this.char6 = char6;
+	}
+
+	public String getPhoto(String i) {
+            // randomly selects an index from the arr
+			String siu = new String();
+            switch (i){
+                case "EvilMorty":
+                    siu = "evil_morty.png";
+                    break;
+                case "poppybutthole":
+                    siu = "mr_poopybutthole.jpg";
+                    break;
+                case "RickPrime":
+                    siu = "rick_prime.png";
+                    break;
+                case "SuperNova":
+                    siu = "supernova.jpg";
+                    break;
+				case "MortySmith":
+                    siu = "morty_smith.jpg";
+                    break;
+				case "RickSanchez":
+					siu = "rick_sanchez.jpg";
+					break;
+            }
+			return siu;
 	}
 }

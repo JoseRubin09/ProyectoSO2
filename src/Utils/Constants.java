@@ -7,11 +7,10 @@ package Utils;
 
 import Classes.IA;
 import Classes.Node;
-import Classes.Queue;
 import Classes.Serie;
 import Classes.ThreadStart;
 import Functionss.interfaceFunctions;
-import Functionss.randomFunctions;
+import java.util.LinkedList;
 
 /**
  *
@@ -24,19 +23,18 @@ public class Constants {
     public static ThreadStart startEverything = new ThreadStart();
     public static IA IA = new IA();
     public static Node newNode;
-    public static Queue cola1P1 = new Queue();      
-    public static Queue cola2P1 = new Queue();
-    public static Queue cola3P1 = new Queue();
-    public static Queue cola1P2 = new Queue();
-    public static Queue cola2P2 = new Queue();
-    public static Queue cola3P2 = new Queue();
-    public static Queue colaRefuerzoP1 = new Queue();
-    public static Queue colaRefuerzoP2 = new Queue();
+    public static java.util.Queue<Node> cola1P1 = new LinkedList<>();
+    public static java.util.Queue<Node> cola2P1 = new LinkedList<>();
+    public static java.util.Queue<Node> cola3P1 = new LinkedList<>();
+    public static java.util.Queue<Node> cola1P2 = new LinkedList<>();
+    public static java.util.Queue<Node> cola2P2 = new LinkedList<>();
+    public static java.util.Queue<Node> cola3P2 = new LinkedList<>();
+    public static java.util.Queue<Node> colaRefuerzoP1 = new LinkedList<>();
+    public static java.util.Queue<Node> colaRefuerzoP2 = new LinkedList<>();
     public static int tiempodia;
     public static ReadFile txtAction = new ReadFile();
     public static WriteFile write = new WriteFile();
     public static ThreadStart threadStart;
     public static interfaceFunctions interfaceFunct = new interfaceFunctions();
-    public static randomFunctions randomFunct = new randomFunctions();
 
 }

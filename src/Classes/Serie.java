@@ -37,23 +37,23 @@ public class Serie {
 		tiempo = 0;
 		if (estudio == 1){
             numRandom = random.nextInt(100) + 1;
-            if (numRandom <= 80) tiempo+=30;
+            if (numRandom <= 80) tiempo+=20;
             numRandom = random.nextInt(100) + 1;
             if (numRandom <= 75) tiempo+=30;
             numRandom = random.nextInt(100) + 1;
-            if (numRandom <= 84) tiempo+=30;
+            if (numRandom <= 84) tiempo+=20;
             numRandom = random.nextInt(100) + 1;
             if (numRandom <= 85) tiempo+=30;
             
         }else{
             numRandom = random.nextInt(100) + 1;
-            if (numRandom <= 80) tiempo+=30;
+            if (numRandom <= 80) tiempo+=20;
             numRandom = random.nextInt(100) + 1;
-            if (numRandom <= 75) tiempo+=30;
+            if (numRandom <= 75) tiempo+=20;
             numRandom = random.nextInt(100) + 1;
-            if (numRandom <= 84) tiempo+=30;
+            if (numRandom <= 84) tiempo+=20;
             numRandom = random.nextInt(100) + 1;
-            if (numRandom <= 85) tiempo+=30;
+            if (numRandom <= 85) tiempo+=40;
         }
         return tiempo;
 	}
@@ -84,6 +84,14 @@ public class Serie {
 					char6 = arr[select];
 					break;
             }
+		}
 	}
-	}
+
+	public Node settingNode(int estudio){
+        this.shuffleChar();
+        id = this.getNewId();
+        tiempo = this.getPriority(estudio);
+        Node newNode = new Node(id, tiempo, estudio, countdown, tipo, char1, char2, char3, char4, char5, char6);
+        return newNode;
+    }
 }
