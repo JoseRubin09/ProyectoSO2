@@ -14,6 +14,8 @@ import Interfaces.Interfaz;
 public class main {
 	
 	public static Interfaz Interfaz = new Interfaz();
+	public static ThreadStart start;
+	public static Admin admin = new Admin();
 
 	public static void main(String[] args) {
 		Interfaz.setVisible(true);

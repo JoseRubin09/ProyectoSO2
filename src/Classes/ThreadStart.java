@@ -6,7 +6,9 @@
 package Classes;
 
 import static Classes.main.Interfaz;
+import static Classes.main.admin;
 import Utils.Constants;
+import static Utils.Constants.interfaceFunct;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,16 +30,14 @@ public class ThreadStart extends Thread{
     public void run(){
 		while (this.stop){
 			try {
-				int Time=Integer.parseInt(Interfaz.timeText.getText());
-
+				Constants.tiempodia = Integer.parseInt(Interfaz.timeText.getText());
 				Interfaz.adminStatus.setText("Creando Telefonos");
 				Interfaz.iaStatus.setText("Espera");
-
-				Constants.admin.createTelef();
+				admin.createSerie();
 				Constants.interfaceFunct.resetTextPanes();
 				Thread.sleep(1000);
 
-				Constants.admin.backToQueue();
+				admin.backToQueue();
 				Interfaz.adminStatus.setText("Regresando a colas los refuerzos");
 				Interfaz.iaStatus.setText("Espera");
 				Thread.sleep(1000);
@@ -47,9 +47,9 @@ public class ThreadStart extends Thread{
 				Constants.IA.decide();
 				Interfaz.adminStatus.setText("Espera");
 				Interfaz.iaStatus.setText("Decidiendo Ganador");
-				Thread.sleep(11000/Time);
+				Thread.sleep(11000/Constants.tiempodia);
 
-				Constants.randomFunct.ActualizarContador();
+				interfaceFunct.ActualizoContador();
 				Constants.interfaceFunct.resetTextPanes();
 				Constants.interfaceFunct.EmptyDetallesBatalla();
 
